@@ -18,7 +18,12 @@
                 <a href="/"><span class="logo glyphicon glyphicon-link" ></span></a>
                 <h1>TrackFit</h1>
                 <p>The web app that helps you stay fit.</p>
-
+				<ul style="width:500px; margin:0 auto;">
+					<a class="btn btn-block btn-lg btn-danger btn-main" href="/viewProfile" role="button">Profile</a>
+				</ul>
+				<ul style="width:500px; margin:0 auto;">
+					<a class="btn btn-block btn-lg btn-danger btn-main" href="/viewGoals" role="button">Goals</a>
+				</ul>
                 <ul style="width:500px; margin:0 auto;">
                     <a class="btn btn-block btn-lg btn-danger btn-main" href="/addExercise" role="button">Add exercise</a>
                 </ul>

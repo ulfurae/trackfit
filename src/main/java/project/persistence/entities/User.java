@@ -24,21 +24,21 @@ public class User {
     private Date birthday;
     private int height;
     private int weight;
-    private int fatPercentage;
+    private int BMI;
 
     // Notice the empty constructor, because we need to be able to create an empty Exercise to add
     // to our model so we can use it with our form
     public User() {
     }
     
-    public User(String username, String pass, String fullName, Date birthday, int height, int weight, int fatPercentage) {
+    public User(String username, String pass, String fullName, Date birthday, int height, int weight, int BMI) {
         this.username = username;
     	this.pass = pass;
         this.fullName = fullName;
         this.birthday = birthday;
         this.height = height;
         this.weight = weight;
-        this.fatPercentage = fatPercentage;
+        this.BMI = BMI;
     }
     
     public int getId() {
@@ -97,12 +97,12 @@ public class User {
 		this.weight = weight;
 	}
 
-	public int getFatPercentage() {
-		return fatPercentage;
+	public int getBMI() {
+		return BMI;
 	}
 
-	public void setFatPercentage(int fatPercentage) {
-		this.fatPercentage = fatPercentage;
+	public void setBMI(int BMI) {
+		this.BMI = BMI;
 	}
 
 }
