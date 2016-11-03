@@ -16,7 +16,8 @@ public class UserExercise {
     // Declare that this attribute is the id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
+    
     private int userGoalID;
     private int userID;
     private int exerciseID;
@@ -28,8 +29,7 @@ public class UserExercise {
     public UserExercise() {
     }
 
-    public UserExercise(int id, int userGoalID, int userID, int exerciseID, int[] unit, Date date) {
-        this.id = id;
+    public UserExercise(int userGoalID, int userID, int exerciseID, int[] unit, Date date) {
         this.userGoalID = userGoalID;
         this.userID = userID;
         this.exerciseID = exerciseID;
@@ -37,11 +37,11 @@ public class UserExercise {
         this.date = date;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
