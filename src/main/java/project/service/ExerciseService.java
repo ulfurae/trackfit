@@ -1,7 +1,6 @@
 package project.service;
 
 import project.persistence.entities.Exercise;
-import project.persistence.entities.Exercise;
 
 import java.util.List;
 
