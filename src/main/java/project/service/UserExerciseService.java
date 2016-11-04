@@ -39,11 +39,11 @@ public interface UserExerciseService {
     UserExercise findOne(Long id);
 
     /**
-     * Find all {@link UserExercise}s with {@link String name}
-     * @param name {@link String}
-     * @return All {@link UserExercise}s with the {@link String name} passed
+     * Find all {@link UserExercise}s with {@link Integer userID}
+     * @param userID {@link Integer}
+     * @return All {@link UserExercise}s with the {@link Integer userID} passed
      */
-    List<UserExercise> findByName(String name);
+    List<UserExercise> findByName(int userID);
 
     /**
      * Find all {@link UserExercise}s with {@link String type}
