@@ -47,6 +47,14 @@ body {
     text-align: left;
 }
 
+.userProfile {
+    margin-left: 100px;	margin-top: 20px;
+}
+
+#userAttr {
+    padding-right: 20px;
+}
+
 label {
     margin: 6px 0 2px;
 }
