@@ -3,7 +3,7 @@ package project.persistence.entities;
 import javax.persistence.*;
 
 /**
- * The class for the Postit Note itself.
+ * The class for the Postit type itself.
  * The system generates a table schema based on this class for this entity.
  * Be sure to annotate any entities you have with the @Entity annotation.
  */
@@ -17,16 +17,16 @@ public class Exercise {
     private Long id;
 
     private String name;
-    private String note;
+    private String type;
 
     // Notice the empty constructor, because we need to be able to create an empty Exercise to add
     // to our model so we can use it with our form
     public Exercise() {
     }
 
-    public Exercise(String name, String note) {
+    public Exercise(String name, String type) {
         this.name = name;
-        this.note = note;
+        this.type = type;
     }
 
     public Long getId() {
@@ -45,19 +45,19 @@ public class Exercise {
         this.name = name;
     }
 
-    public String getNote() {
-        return note;
+    public String gettype() {
+        return type;
     }
 
-    public void setNote(String note) {
-        this.note = note;
+    public void settype(String type) {
+        this.type = type;
     }
 
     // This is for easier debug.
     @Override
     public String toString() {
         return String.format(
-                "Exercise[name=%s, note=%s]",
-                name,note);
+                "Exercise[name=%s, type=%s]",
+                name,type);
     }
 }

@@ -15,10 +15,10 @@ public interface UserService {
     User save(User user);
 
     /**
-     * Find all {@link User}s with {@link String userName}
-     * @param userName {@link String}
-     * @return All {@link User}s with the {@link String userName} passed
+     * Find all {@link User}s with {@link String username}
+     * @param username {@link String}
+     * @return All {@link User}s with the {@link String username} passed
      */
-    List<User> findByName(String userName);
+    User findByUsername(String username);
 
 }

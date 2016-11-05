@@ -31,7 +31,9 @@
                         <div class="form-group">
                             <label> Name:</label>
                             <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                            <sf:input path="name" type="text" placeholder="Enter name" class="form-control"/>
+                            <sf:select path="name" type="text" placeholder="Enter name" class="form-control">
+                                <sf:options items="${exercises}" />
+                            </sf:select>
 
                             <label>Notes:</label>
                             <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>

@@ -10,7 +10,7 @@ import javax.persistence.*;
  * Be sure to annotate any entities you have with the @Entity annotation.
  */
 @Entity
-@Table(name = "User") // If you want to specify a table name, you can do so here
+@Table(name = "Users") // If you want to specify a table name, you can do so here
 public class User {
 
     // Declare that this attribute is the id
@@ -31,14 +31,14 @@ public class User {
     public User() {
     }
     
-    public User(String username, String pass, String fullName, Date birthday, int height, int weight, int BMI) {
+    public User(String username, String pass, String fullName, Date birthday, int height, int weight) {
         this.username = username;
     	this.pass = pass;
         this.fullName = fullName;
         this.birthday = birthday;
         this.height = height;
         this.weight = weight;
-        this.BMI = BMI;
+
     }
     
     public Long getId() {
