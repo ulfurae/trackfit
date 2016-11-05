@@ -25,13 +25,7 @@
                 <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
                 <%--that is added to the model that is passed to the view.--%>
                 <%--See exerciseController, method addExerciseViewGet(), and find where this attribute is added to the model.--%>
-                <sf:form method="POST" commandName="exerciseForm" action="/showHistoryLog">
-
-                        <div class="form-group">
-                            <input type="submit" VALUE="Show history log" class="btn btn-success btn-block"/>
-                        </div>
-                    </div>
-                </sf:form>
+         
                 
                 <%--Choose what code to generate based on tests that we implement--%>
                 <c:choose>
