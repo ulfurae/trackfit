@@ -27,6 +27,9 @@
                 <ul style="width:500px; margin:0 auto;">
                     <a class="btn btn-block btn-lg btn-danger btn-main" href="/addExercise" role="button">Add exercise</a>
                 </ul>
+                <ul style="width:500px; margin:0 auto;">
+                    <a class="btn btn-block btn-lg btn-danger btn-main" href="/viewPerformance" role="button">Performance History</a>
+                </ul>
 
             </div>
         </main>
