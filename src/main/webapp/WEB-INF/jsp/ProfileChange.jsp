@@ -21,8 +21,6 @@
                 <a href="/"><span class="logo glyphicon glyphicon-link" ></span></a>
 
                 <h1 class="title">Change Profile</h1>
-                
-        		<p>Heeeelllo</p>
         		
         		<sf:form method="POST" commandName="newUser" action="/viewProfile">
 
