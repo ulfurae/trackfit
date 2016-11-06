@@ -26,69 +26,55 @@ public class UserController {
         this.formulaService = formulaService;
     }
 
-    // Method that returns the correct view for the URL /postit
-    // This handles the GET request for this URL
-    // Notice the `method = RequestMethod.GET` part
+    // Method that returns the correct view for the URL /viewProfile
     @RequestMapping(value = "/viewProfile", method = RequestMethod.GET)
     public String viewProfileGetView(Model model){
 
-
+    	// mock object User
         User user = userService.findByUsername("tester1");
-        // Here we get all the Postit Notes (in a reverse order) and add them to the model
+
+        // connect object User to the form
         model.addAttribute("user", user);
         
+        // calculate BMI
         BMI BMI = formulaService.BMICalculate(user.getHeight(), user.getWeight());
+        
+        // connect object BMI to the form
         model.addAttribute("bmi", BMI);
 
         // Return the view
         return "Profile";
     }
     
- // Method that receives the POST request on the URL /postit
-    // and receives the ModelAttribute("addExercise")
-    // That attribute is the attribute that is mapped to the form, so here
-    // we can save the postit note because we get the data that was entered
-    // into the form.
-    // Notice the `method = RequestMethod.POST` part
-  @RequestMapping(value = "/viewProfile", method = RequestMethod.POST)
+    // Method that receives the POST request on the URL /viewProfile
+    @RequestMapping(value = "/viewProfile", method = RequestMethod.POST)
     public String viewProfilePostView(@ModelAttribute("newUser") User newUser,
                                      Model model){
-
-	   User oldUser = userService.findByUsername("tester1");
-	   int weight = newUser.getWeight();
-	   oldUser.setWeight(weight);
-	   userService.save(oldUser);
-	   
-	   User updatedUser = userService.findByUsername("tester1");
-	   model.addAttribute("user", updatedUser);
-	   BMI BMI = formulaService.BMICalculate(updatedUser.getHeight(), updatedUser.getWeight());
-	   model.addAttribute("bmi", BMI);
-        // Add a new Postit Note to the model for the form
-        // If you look at the form in addExercise.jsp, you can see that we
-        // reference this attribute there by the name `addExercise`.
-        //model.addAttribute("userForm", new User());
+    	
+    	// mock Object User updating weight information
+    	User oldUser = userService.findByUsername("tester1");
+    	int weight = newUser.getWeight();
+    	oldUser.setWeight(weight);
+    	userService.save(oldUser);
+    	
+    	// mock Object User BMI changes if weight is updated
+    	User updatedUser = userService.findByUsername("tester1");
+    	// connect User object to the form
+    	model.addAttribute("user", updatedUser);
+    	// update BMI
+    	BMI BMI = formulaService.BMICalculate(updatedUser.getHeight(), updatedUser.getWeight());
+	   	// connect BMI object to the form
+    	model.addAttribute("bmi", BMI);
 
         // Return the view
         return "Profile";
     }
     
- // Method that returns the correct view for the URL /postit/{name}
-    // The {name} part is a Path Variable, and we can reference that in our method
-    // parameters as a @PathVariable. This enables us to create dynamic URLs that are
-    // based on the data that we have.
-    // This method finds all Postit Notes posted by someone with the requested {name}
-    // and returns a list with all those Postit Notes.
+    // Method that returns the correct view for the URL /viewProfile/change to update User information
     @RequestMapping(value = "/viewProfile/change", method = RequestMethod.GET)
     public String viewProfileChangeView(Model model){
-
-        // Get all Postit Notes with this name and add them to the model
-        //model.addAttribute("changeProfile", userService.findByUsername("tester1"));
-
-        // Add a new Postit Note to the model for the form
-        // If you look at the form in addExercise.jsp, you can see that we
-        // reference this attribute there by the name `addExercise`.
-        //model.addAttribute("Form", new Exercise());
     	
+    	// connect User object to the form
     	model.addAttribute("newUser", new User());
 
         // Return the view

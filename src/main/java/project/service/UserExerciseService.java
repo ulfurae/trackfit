@@ -45,5 +45,4 @@ public interface UserExerciseService {
      */
     List<UserExercise> findByUserID(int userID);
 
-
 }

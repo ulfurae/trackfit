@@ -3,18 +3,12 @@ package project.service;
 import org.springframework.stereotype.Service;
 import project.persistence.entities.BMI;
 
-/**
- * Service class that has methods for String Manipulation
- *
- * DISCLAIMER:  This class is just for demonstration purposes,
- *              something basic as this would be handled where it is needed
- */
 @Service
 public class FormulaService {
 
     /**
-     * Returns the string that is passed to the method in Upper Case
-     * @param string String to convert to Upper Case
+     * Returns the Body Mass Index string
+     * @param takes in 2 int value height and weight, calculate using the formula 
      * @return String
      */
     public BMI BMICalculate(int height, int weight){

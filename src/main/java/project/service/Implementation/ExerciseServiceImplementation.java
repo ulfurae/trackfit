@@ -38,7 +38,7 @@ public class ExerciseServiceImplementation implements ExerciseService {
 
     @Override
     public List<Exercise> findAllReverseOrder() {
-        // Get all the Postit notes
+        // Get all the exercises
         List<Exercise> exercises = repository.findAll();
 
         // Reverse the list
