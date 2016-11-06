@@ -6,7 +6,6 @@ import java.util.List;
 
 public interface ExerciseService {
 
-
     /**
      * Save a {@link Exercise}
      * @param exercise {@link Exercise} to be saved

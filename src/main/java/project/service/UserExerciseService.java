@@ -11,13 +11,13 @@ public interface UserExerciseService {
      * @param exercise {@link UserExercise} to be saved
      * @return {@link UserExercise} that was saved
      */
-    UserExercise save(UserExercise userexercise);
+    UserExercise save(UserExercise userExercise);
 
     /**
      * Delete {@link UserExercise}
      * @param exercise {@link UserExercise} to be deleted
      */
-    void delete(UserExercise userexercise);
+    void delete(UserExercise userExercise);
 
     /**
      * Get all {@link UserExercise}s
@@ -43,12 +43,7 @@ public interface UserExerciseService {
      * @param userID {@link Integer}
      * @return All {@link UserExercise}s with the {@link Integer userID} passed
      */
-    List<UserExercise> findByName(int userID);
+    List<UserExercise> findByUserID(int userID);
 
-    /**
-     * Find all {@link UserExercise}s with {@link String type}
-     * @param name {@link String}
-     * @return All {@link UserExercise}s with the {@link String type} passed
-     */
-    List<UserExercise> findByType(String type);
+
 }

@@ -24,8 +24,9 @@ public class ExerciseController {
 
     // Dependency Injection
     @Autowired
-    public ExerciseController(ExerciseService exerciseService) {
+    public ExerciseController(ExerciseService exerciseService, UserExerciseService uExerciseService) {
         this.exerciseService = exerciseService;
+        this.uExerciseService = uExerciseService;
     }
 
     // Method that returns the correct view for the URL /postit
@@ -44,6 +45,7 @@ public class ExerciseController {
         }
 
         model.addAttribute("exerciseForm",new UserExercise());
+
         model.addAttribute("exercises", el2);
 
         return "ExerciseAdd";
@@ -56,11 +58,12 @@ public class ExerciseController {
     // into the form.
     // Notice the `method = RequestMethod.POST` part
     @RequestMapping(value = "/addExercise", method = RequestMethod.POST)
-    public String addExerciseViewPost(@ModelAttribute("addExercise") UserExercise uExercise,
+    public String addExercisePost(@ModelAttribute("addExercise") UserExercise uExercise,
                                      Model model){
 
         uExercise.setDate(new Date());
         uExercise.setUserID(1);
+        uExercise.setUserGoalID(0);
 
         // Save the Postit Note that we received from the form
         uExerciseService.save(uExercise);
@@ -72,7 +75,7 @@ public class ExerciseController {
         // Add a new Postit Note to the model for the form
         // If you look at the form in addExercise.jsp, you can see that we
         // reference this attribute there by the name `addExercise`.
-        model.addAttribute("exerciseForm", new Exercise());
+        model.addAttribute("exerciseForm", new UserExercise());
 
         // Return the view
         return "ExerciseAdd";
@@ -94,7 +97,7 @@ public class ExerciseController {
         // Add a new Postit Note to the model for the form
         // If you look at the form in addExercise.jsp, you can see that we
         // reference this attribute there by the name `addExercise`.
-        model.addAttribute("exerciseForm", new Exercise());
+        //model.addAttribute("exerciseForm", new UserExercise());
 
         // Return the view
         return "ExerciseAdd";

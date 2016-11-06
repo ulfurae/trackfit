@@ -38,9 +38,9 @@
 
                            <label>Units:</label>
                            <div>
-                             <sf:input id="unit1" path="unit1" type="text" placeholder="kilo" class="form-control" style="width:33%;  float: left;  margin-right: 5px;  }"/>
+                             <sf:input path="unit1" type="text" placeholder="kilo" class="form-control" style="width:33%;  float: left;  margin-right: 5px;  }"/>
                              <span  style="float: left; margin: 0px 5px 0px 1px;">x</span>
-                             <sf:input id="unit2" path="unit2" type="text" placeholder="reps" class="form-control" style="width:33%; float: left; "/>
+                             <sf:input path="unit2" type="text" placeholder="reps" class="form-control" style="width:33%; float: left; "/>
                            </div>
                         </div>
                         <br>

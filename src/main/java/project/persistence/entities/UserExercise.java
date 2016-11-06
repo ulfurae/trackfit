@@ -21,7 +21,7 @@ public class UserExercise {
     private int userGoalID;
     private int userID;
     private int exerciseID;
-    private int[] unit;
+
     private int unit1;
     private int unit2;
     private Date date;

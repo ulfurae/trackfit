@@ -53,12 +53,8 @@ public class UserExerciseServiceImplementation implements UserExerciseService {
     }
 
     @Override
-    public List<UserExercise> findByName(int userID) {
-        return repository.findByName(userID);
+    public List<UserExercise> findByUserID(int userID) {
+        return repository.findByUserID(userID);
     }
-    
-    @Override
-    public List<UserExercise> findByType(String type) {
-    	return repository.findByType(type);
-    }
+
 }
