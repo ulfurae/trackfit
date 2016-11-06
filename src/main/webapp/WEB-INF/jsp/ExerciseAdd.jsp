@@ -31,8 +31,9 @@
                         <div class="form-group">
 
                            <label>Choose exercise:</label>
-                           <sf:select path="name"  placeholder="Chose exercise" class="form-control">
-                                <sf:options items="${exercises}" />
+                           <sf:select path="exerciseID"  placeholder="Chose exercise" class="form-control">
+                                <sf:option value="1" >Run</sf:option>
+                                <sf:option value="2" >Back squat</sf:option>
                             </sf:select>
 
                            <label>Units:</label>
