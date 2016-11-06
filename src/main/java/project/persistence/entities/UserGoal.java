@@ -20,7 +20,8 @@ public class UserGoal {
     
     private int userID;
     private int exerciseID; 
-    private int[] unitGoal;
+    private int unit1;
+    private int unit2;
     private Date startDate;
     private Date endDate;
     private String status;
@@ -30,10 +31,11 @@ public class UserGoal {
     public UserGoal() {
     }
     
-    public UserGoal(int userID, int exerciseID, int[] unitGoal, Date startDate, Date endDate, String status) {
+    public UserGoal(int userID, int exerciseID, int unit1, int unit2, Date startDate, Date endDate, String status) {
         this.userID = userID;
         this.exerciseID = exerciseID;
-    	this.unitGoal = unitGoal;
+    	this.unit1 = unit1;
+    	this.unit2 = unit2;
         this.startDate = startDate;
         this.endDate = endDate;
         this.status = status;
@@ -63,12 +65,20 @@ public class UserGoal {
 		this.exerciseID = exerciseID;
 	}
 
-	public int[] getUnitGoal() {
-		return unitGoal;
+	public int getUnit1() {
+		return unit1;
 	}
 
-	public void setUnitGoal(int[] unitGoal) {
-		this.unitGoal = unitGoal;
+	public void setUnit1(int unit1) {
+		this.unit1 = unit1;
+	}
+	
+	public int getUnit2() {
+		return unit2;
+	}
+
+	public void setUnit2(int unit2) {
+		this.unit2 = unit2;
 	}
 
 	public Date getStartDate() {
