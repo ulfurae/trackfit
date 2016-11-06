@@ -29,52 +29,39 @@ public class ExerciseController {
         this.uExerciseService = uExerciseService;
     }
 
-    // Method that returns the correct view for the URL /postit
-    // This handles the GET request for this URL
-    // Notice the `method = RequestMethod.GET` part
+    // GET method that returns the correct view for the URL /addExercise
     @RequestMapping(value = "/addExercise", method = RequestMethod.GET)
-    public String addExerciseViewGet(Model model){
+    public String addExerciseGet(Model model){
 
+        /* TODO: make this functional
         List el =  exerciseService.findAllReverseOrder();
         List el2 = new ArrayList();
-
-
         for(Object x : el) {
             Exercise b = (Exercise) x;
             el2.add(b.getName());
         }
-
-        model.addAttribute("exerciseForm",new UserExercise());
-
         model.addAttribute("exercises", el2);
+        */
+
+        // connecting the UserExercise object to the form
+        model.addAttribute("exerciseForm",new UserExercise());
 
         return "ExerciseAdd";
     }
 
-    // Method that receives the POST request on the URL /postit
-    // and receives the ModelAttribute("addExercise")
-    // That attribute is the attribute that is mapped to the form, so here
-    // we can save the postit note because we get the data that was entered
-    // into the form.
-    // Notice the `method = RequestMethod.POST` part
+    // Method that receives the POST request on the URL /addExercise and receives the ModelAttribute("addExercise")
     @RequestMapping(value = "/addExercise", method = RequestMethod.POST)
-    public String addExercisePost(@ModelAttribute("addExercise") UserExercise uExercise,
-                                     Model model){
+    public String addExercisePost(@ModelAttribute("addExercise") UserExercise uExercise, Model model) {
 
+        // set mock values into UserExercise for testing
         uExercise.setDate(new Date());
         uExercise.setUserID(1);
         uExercise.setUserGoalID(0);
 
-        // Save the Postit Note that we received from the form
+        // Save the UserExercise that is received from the form
         uExerciseService.save(uExercise);
 
-
-        // Here we get all the Postit Notes (in a reverse order) and add them to the model
-        //model.addAttribute("exercises", exerciseService.findAllReverseOrder());
-
-        // Add a new Postit Note to the model for the form
-        // If you look at the form in addExercise.jsp, you can see that we
-        // reference this attribute there by the name `addExercise`.
+        // Refresh the form with a new UserExercise
         model.addAttribute("exerciseForm", new UserExercise());
 
         // Return the view
