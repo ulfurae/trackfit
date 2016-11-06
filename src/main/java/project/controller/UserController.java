@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import project.persistence.entities.Exercise;
 import project.persistence.entities.User;
+import project.persistence.entities.BMI;
 import project.service.UserService;
 import project.service.FormulaService;
 
@@ -42,7 +43,7 @@ public class UserController {
         // Here we get all the Postit Notes (in a reverse order) and add them to the model
         model.addAttribute("user", user);
         
-        double BMI = formulaService.BMICalculate(user.getHeight(), user.getWeight());
+        BMI BMI = formulaService.BMICalculate(user.getHeight(), user.getWeight());
         model.addAttribute("bmi", BMI);
 
         // Return the view
@@ -66,7 +67,7 @@ public class UserController {
 	   
 	   User updatedUser = userService.findByUsername("tester1");
 	   model.addAttribute("user", updatedUser);
-	   double BMI = formulaService.BMICalculate(updatedUser.getHeight(), updatedUser.getWeight());
+	   BMI BMI = formulaService.BMICalculate(updatedUser.getHeight(), updatedUser.getWeight());
 	   model.addAttribute("bmi", BMI);
         // Add a new Postit Note to the model for the form
         // If you look at the form in addExercise.jsp, you can see that we

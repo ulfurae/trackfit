@@ -1,6 +1,7 @@
 package project.service;
 
 import org.springframework.stereotype.Service;
+import project.persistence.entities.BMI;
 
 /**
  * Service class that has methods for String Manipulation
@@ -16,9 +17,28 @@ public class FormulaService {
      * @param string String to convert to Upper Case
      * @return String
      */
-    public double BMICalculate(int height, int weight){
+    public BMI BMICalculate(int height, int weight){
+    	BMI bmi = new BMI();
     	double heightInMeters = height/(double)100;
         double BMI = weight/(heightInMeters*heightInMeters);
-        return Math.floor(BMI * 100) / 100;
+        double BMIIndex = Math.floor(BMI * 100) / 100;
+        String idealWeight;
+        
+        if(BMIIndex < 18.5) {
+        	idealWeight = "Underweight";
+        }
+        else if(BMIIndex >= 18.5 && BMIIndex <= 24.9) {
+        	idealWeight = "Normal weight";
+        }
+        else if(BMIIndex > 24.9 && BMIIndex < 30) {
+        	idealWeight = "Overweight";
+        }
+        else {
+        	idealWeight = "Obesity";
+        }
+        
+        bmi.setBMIIndex(BMIIndex);
+        bmi.setIdealWeight(idealWeight);
+        return bmi;
     }
 }

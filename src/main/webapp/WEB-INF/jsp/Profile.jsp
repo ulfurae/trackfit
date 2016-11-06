@@ -43,7 +43,8 @@
         				</tr>
         				<tr>
         					<td id="userAttr"><b>BMI:</b></td>
-        					<td>${bmi}</td>
+        					<td>${bmi.BMIIndex}</td>
+        					<td><b>${bmi.idealWeight}</b></td>
         				</tr>
         			</tbody>
         		</table>
