@@ -21,10 +21,7 @@
                 <a href="/"><span class="logo glyphicon glyphicon-link" ></span></a>
 
                 <h1 class="title">Add new exercise</h1>
-
-                <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
-                <%--that is added to the model that is passed to the view.--%>
-                <%--See exerciseController, method addExerciseViewGet(), and find where this attribute is added to the model.--%>
+                
                 <sf:form method="POST" commandName="exerciseForm" action="/addExercise">
 
                     <div class="form-exercise col-md-4">

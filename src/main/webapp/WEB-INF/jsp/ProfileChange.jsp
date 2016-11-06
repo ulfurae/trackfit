@@ -27,7 +27,6 @@
                     <div class="form-exercise col-md-4">
                         <div class="form-group">
                             <label>Weight:</label>
-                            <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
                             <sf:input path="weight" type="text" placeholder="Enter weight" class="form-control"/>
                         </div>
                         <div class="form-group">
