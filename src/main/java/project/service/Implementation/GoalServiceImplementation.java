@@ -32,7 +32,7 @@ public class GoalServiceImplementation implements GoalService {
     }
 
     @Override
-    public List<UserGoal> findByName(int userID) {
-        return repository.findByName(userID);
+    public List<UserGoal> findByUserID(int userID) {
+        return repository.findByUserID(userID);
     }
 }

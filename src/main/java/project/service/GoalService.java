@@ -26,6 +26,6 @@ public interface GoalService {
      * @param userID {@link Integer}
      * @return All {@link UserGoal}s with the {@link Integer userID} passed
      */
-    List<UserGoal> findByName(int userID);
+    List<UserGoal> findByUserID(int userID);
 
 }
