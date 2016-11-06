@@ -7,7 +7,7 @@
 <html lang="en">
 
     <head>
-        <title>TrackFit - Profile</title>
+        <title>TrackFit - Profile Change</title>
         <%--Bootstrap CSS--%>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
         <%--Local CSS--%>
@@ -20,34 +20,23 @@
             <div class="main-container">
                 <a href="/"><span class="logo glyphicon glyphicon-link" ></span></a>
 
-                <h1 class="title">Profile</h1>
+                <h1 class="title">Change Profile</h1>
                 
-        		<table class="userProfile">
-        			<tbody>
-        				<tr>
-        					<td id="userAttr"><b>Name:</b></td>
-        					<td>${user.fullName}</td>
-        				</tr>
-        				<tr>
-        					<td id="userAttr"><b>Birthday:</b></td>
-        					<td>${user.birthday}</td>
-        				</tr>
-        				<tr>
-        					<td id="userAttr"><b>Height:</b></td>
-        					<td>${user.height}</td>
-        				</tr>
-        				<tr>
-        					<td id="userAttr"><b>Weight:</b></td>
-        					<td>${user.weight}</td>
-        					<td><a href="/viewProfile/change">Change Weight</a></td>
-        				</tr>
-        				<tr>
-        					<td id="userAttr"><b>BMI:</b></td>
-        					<td>${bmi}</td>
-        				</tr>
-        			</tbody>
-        		</table>
+        		<p>Heeeelllo</p>
         		
+        		<sf:form method="POST" commandName="newUser" action="/viewProfile">
+
+                    <div class="form-exercise col-md-4">
+                        <div class="form-group">
+                            <label>Weight:</label>
+                            <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
+                            <sf:input path="weight" type="text" placeholder="Enter name" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" VALUE="Change Weight" class="btn btn-success btn-block"/>
+                        </div>
+                    </div>
+                </sf:form>
             </div>
         </main>
 
