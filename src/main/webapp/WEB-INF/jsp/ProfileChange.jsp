@@ -28,7 +28,7 @@
                         <div class="form-group">
                             <label>Weight:</label>
                             <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                            <sf:input path="weight" type="text" placeholder="Enter name" class="form-control"/>
+                            <sf:input path="weight" type="text" placeholder="Enter weight" class="form-control"/>
                         </div>
                         <div class="form-group">
                             <input type="submit" VALUE="Change Weight" class="btn btn-success btn-block"/>
