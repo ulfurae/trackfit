@@ -4,13 +4,8 @@ import java.util.Date;
 
 import javax.persistence.*;
 
-/**
- * The class for the Postit Note itself.
- * The system generates a table schema based on this class for this entity.
- * Be sure to annotate any entities you have with the @Entity annotation.
- */
 @Entity
-@Table(name = "Users") // If you want to specify a table name, you can do so here
+@Table(name = "Users")
 public class User {
 
     // Declare that this attribute is the id
@@ -26,10 +21,7 @@ public class User {
     private int weight;
     private int BMI;
 
-    // Notice the empty constructor, because we need to be able to create an empty Exercise to add
-    // to our model so we can use it with our form
-    public User() {
-    }
+    public User() { }
     
     public User(String username, String pass, String fullName, Date birthday, int height, int weight) {
         this.username = username;

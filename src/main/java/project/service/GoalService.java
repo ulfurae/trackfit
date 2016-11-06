@@ -6,7 +6,6 @@ import java.util.List;
 
 public interface GoalService {
 
-
     /**
      * Save a {@link UserGoal}
      * @param userGoal {@link UserGoal} to be saved
@@ -14,7 +13,6 @@ public interface GoalService {
      */
     UserGoal save(UserGoal userGoal);
 
-    
     /**
      * Delete {@link UserGoal}
      * @param userGoal {@link UserGoal} to be deleted

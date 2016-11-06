@@ -7,12 +7,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import project.persistence.entities.Exercise;
 import project.persistence.entities.UserExercise;
 import project.service.ExerciseService;
 import project.service.UserExerciseService;
 
-import java.lang.reflect.Field;
 import java.util.*;
 
 @Controller
@@ -68,7 +66,7 @@ public class ExerciseController {
         return "ExerciseAdd";
     }
     
- // GET method that returns the correct view for the URL /viewPerformace
+ // GET method that returns the view for the URL /viewPerformace
     @RequestMapping(value = "/viewPerformance", method = RequestMethod.GET)
     public String userExerciseViewGet(Model model){
 

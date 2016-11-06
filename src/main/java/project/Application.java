@@ -34,11 +34,12 @@ public class Application extends SpringBootServletInitializer{
         SpringApplication.run(Application.class,args);
     }
 
+    // A method that creates exercises when the application is run
     @Bean
     public CommandLineRunner makeExercises(ExerciseRepository repository) {
         return (args) -> {
-            // save a couple of customers
             List exerciseList = repository.findAll();
+            // if exercise table is empty then input exercises
             if(exerciseList.size()==0) {
                 repository.save(new Exercise("Run", "Cardio"));
                 repository.save(new Exercise("Back squat", "Weightlifting"));
@@ -46,10 +47,12 @@ public class Application extends SpringBootServletInitializer{
         };
     }
 
+    // A method that creates mock users when the application is run
     @Bean
     public CommandLineRunner makeMockUser(UserRepository repository) {
         return (args) -> {
             List usersList = repository.findAll();
+            // if user table is empty then input mock users
             if(usersList.size()==0) {
                 repository.save(new User("tester1", "123", "Tester Testson", new Date(), 180, 80));
             }

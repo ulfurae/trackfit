@@ -6,7 +6,6 @@ import java.util.List;
 
 public interface UserService {
 
-
     /**
      * Save a {@link User}
      * @param user {@link User} to be saved

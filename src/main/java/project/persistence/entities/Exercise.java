@@ -2,13 +2,8 @@ package project.persistence.entities;
 
 import javax.persistence.*;
 
-/**
- * The class for the Postit type itself.
- * The system generates a table schema based on this class for this entity.
- * Be sure to annotate any entities you have with the @Entity annotation.
- */
 @Entity
-@Table(name = "Exercise") // If you want to specify a table name, you can do so here
+@Table(name = "Exercise")
 public class Exercise {
 
     // Declare that this attribute is the id
@@ -19,10 +14,7 @@ public class Exercise {
     private String name;
     private String type;
 
-    // Notice the empty constructor, because we need to be able to create an empty Exercise to add
-    // to our model so we can use it with our form
-    public Exercise() {
-    }
+    public Exercise() { }
 
     public Exercise(String name, String type) {
         this.name = name;

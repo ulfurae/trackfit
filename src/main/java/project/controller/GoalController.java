@@ -22,7 +22,7 @@ public class GoalController {
         this.goalService = goalService;
     }
 
-    // Method that returns the correct view for the URL /addGoal
+    // Method that returns the view for the URL /addGoal
     @RequestMapping(value = "/addGoal", method = RequestMethod.GET)
     public String addGoalViewGet(Model model){
 
@@ -33,6 +33,6 @@ public class GoalController {
         return "GoalAdd";
     }
 
-    // TODO: Á eftir að vinna í þessu !!!!!
+    // TODO: Á eftir að vinna í þessu !!
     
 }

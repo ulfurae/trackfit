@@ -26,7 +26,7 @@ public class UserController {
         this.formulaService = formulaService;
     }
 
-    // Method that returns the correct view for the URL /viewProfile
+    // Method that returns the view for the URL /viewProfile
     @RequestMapping(value = "/viewProfile", method = RequestMethod.GET)
     public String viewProfileGetView(Model model){
 
@@ -70,7 +70,7 @@ public class UserController {
         return "Profile";
     }
     
-    // Method that returns the correct view for the URL /viewProfile/change to update User information
+    // Method that returns the view for the URL /viewProfile/change to update User information
     @RequestMapping(value = "/viewProfile/change", method = RequestMethod.GET)
     public String viewProfileChangeView(Model model){
     	

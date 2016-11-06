@@ -8,14 +8,14 @@ public interface UserExerciseService {
 
     /**
      * Save a {@link UserExercise}
-     * @param exercise {@link UserExercise} to be saved
+     * @param userExercise {@link UserExercise} to be saved
      * @return {@link UserExercise} that was saved
      */
     UserExercise save(UserExercise userExercise);
 
     /**
      * Delete {@link UserExercise}
-     * @param exercise {@link UserExercise} to be deleted
+     * @param userExercise {@link UserExercise} to be deleted
      */
     void delete(UserExercise userExercise);
 
