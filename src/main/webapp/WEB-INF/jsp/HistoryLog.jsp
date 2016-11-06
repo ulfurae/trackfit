@@ -32,7 +32,7 @@
                     <%--If the model has an attribute with the name `exercises`--%>
                     <c:when test="${not empty exercises}">
                         <%--Create a table for the exercise Notes--%>
-                        <table class="notes">
+                        <table class="exercises">
 
                             <%--For each exercise note, that is in the list that was passed in the model--%>
                             <%--generate a row in the table--%>
@@ -45,7 +45,7 @@
                                     <%--Create a link based on the name attribute value--%>
                                     <td><a href="/exercises/${exercise.name}">${exercise.name}</a></td>
                                     <%--The String in the note attribute--%>
-                                    <td>${exercise.note}</td>
+                                    <td>${exercise.type}</td>
                                 </tr>
                             </c:forEach>
                         </table>

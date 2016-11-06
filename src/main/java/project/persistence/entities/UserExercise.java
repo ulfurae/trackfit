@@ -22,6 +22,8 @@ public class UserExercise {
     private int userID;
     private int exerciseID;
     private int[] unit;
+    private int unit1;
+    private int unit2;
     private Date date;
 
     // Notice the empty constructor, because we need to be able to create an empty Exercise to add
@@ -29,11 +31,12 @@ public class UserExercise {
     public UserExercise() {
     }
 
-    public UserExercise(int userGoalID, int userID, int exerciseID, int[] unit, Date date) {
+    public UserExercise(int userGoalID, int userID, int exerciseID, int unit1, int unit2, Date date) {
         this.userGoalID = userGoalID;
         this.userID = userID;
         this.exerciseID = exerciseID;
-        this.unit = unit;
+        this.unit1 = unit1;
+        this.unit2 = unit2;
         this.date = date;
     }
 
@@ -69,12 +72,18 @@ public class UserExercise {
         this.exerciseID = exerciseID;
     }
     
-    public int[] getUnit() {
-        return unit;
+    public int getUnit1() {
+        return unit1;
+    }
+    public int getUnit2() {
+        return unit2;
     }
 
-    public void setUnit(int[] unit) {
-        this.unit = unit;
+    public void setUnit1(int unit1) {
+        this.unit1 = unit1;
+    }
+    public void setUnit2(int unit2) {
+        this.unit2 = unit2;
     }
     
     public Date getDate() {

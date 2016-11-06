@@ -34,11 +34,7 @@ public class UserController {
     @RequestMapping(value = "/viewProfile", method = RequestMethod.GET)
     public String viewProfileGetView(Model model){
 
-        // Add a new Postit Note to the model for the form
-        // If you look at the form in addExercise.jsp, you can see that we
-        // reference this attribute there by the name `addExercise`.
-        //model.addAttribute("userForm",new User());
-        
+
         User user = userService.findByUsername("tester1");
         // Here we get all the Postit Notes (in a reverse order) and add them to the model
         model.addAttribute("user", user);

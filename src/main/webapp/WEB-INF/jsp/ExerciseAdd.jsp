@@ -29,16 +29,21 @@
 
                     <div class="form-exercise col-md-4">
                         <div class="form-group">
-                            <label> Name:</label>
-                            <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                            <sf:select path="name" type="text" placeholder="Enter name" class="form-control">
+
+                           <label>Choose exercise:</label>
+                           <sf:select path="name"  placeholder="Chose exercise" class="form-control">
                                 <sf:options items="${exercises}" />
                             </sf:select>
 
-                            <label>Notes:</label>
-                            <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-                            <sf:textarea path="note" type="text" placeholder="Note text here" class="form-control"/>
+                           <label>Units:</label>
+                           <div>
+                             <sf:input id="unit1" path="unit1" type="text" placeholder="kilo" class="form-control" style="width:33%;  float: left;  margin-right: 5px;  }"/>
+                             <span  style="float: left; margin: 0px 5px 0px 1px;">x</span>
+                             <sf:input id="unit2" path="unit2" type="text" placeholder="reps" class="form-control" style="width:33%; float: left; "/>
+                           </div>
                         </div>
+                        <br>
+                        <br>
                         <div class="form-group">
                             <input type="submit" VALUE="Save exercise" class="btn btn-success btn-block"/>
                         </div>

@@ -23,6 +23,7 @@ body {
     border-radius: 1px;
     padding: 10px;
     font-size: 25px;
+    margin: 15px auto;
 }
 
 .logo {
@@ -48,15 +49,19 @@ body {
 }
 
 .userProfile {
-    margin-left: 100px;	margin-top: 20px;
+    margin-left: 100px;
+    margin-top: 20px;
+    text-align: left;
 }
 
 .userProfile tbody tr td {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
+
 }
 
 #userAttr {
     padding-right: 20px;
+        text-align: right;
 }
 
 label {
