@@ -32,7 +32,7 @@
 
                            <label>Choose exercise:</label>
                            <sf:select path="exerciseID"  placeholder="Chose exercise" class="form-control">
-                                <sf:option value="1" >Run</sf:option>
+                                <sf:option value="1" >Power Clean</sf:option>
                                 <sf:option value="2" >Back squat</sf:option>
                             </sf:select>
 

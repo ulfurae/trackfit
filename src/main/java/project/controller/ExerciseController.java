@@ -67,28 +67,6 @@ public class ExerciseController {
         // Return the view
         return "ExerciseAdd";
     }
-
-    // Method that returns the correct view for the URL /postit/{name}
-    // The {name} part is a Path Variable, and we can reference that in our method
-    // parameters as a @PathVariable. This enables us to create dynamic URLs that are
-    // based on the data that we have.
-    // This method finds all Postit Notes posted by someone with the requested {name}
-    // and returns a list with all those Postit Notes.
-    @RequestMapping(value = "/exercises/{name}", method = RequestMethod.GET)
-    public String addExerciseGetNotesFromName(@PathVariable String name,
-                                             Model model){
-
-        // Get all Postit Notes with this name and add them to the model
-        model.addAttribute("exercises", exerciseService.findByName(name));
-
-        // Add a new Postit Note to the model for the form
-        // If you look at the form in addExercise.jsp, you can see that we
-        // reference this attribute there by the name `addExercise`.
-        //model.addAttribute("exerciseForm", new UserExercise());
-
-        // Return the view
-        return "ExerciseAdd";
-    }
     
     @RequestMapping(value = "/viewPerformance", method = RequestMethod.GET)
     public String userExerciseViewGet(Model model){
@@ -99,7 +77,7 @@ public class ExerciseController {
         //model.addAttribute("exerciseForm",new Exercise());
 
         // Here we get all the Postit Notes (in a reverse order) and add them to the model
-        model.addAttribute("exercises", exerciseService.findAllReverseOrder());
+        model.addAttribute("exercises", uExerciseService.findAllReverseOrder());
 
         // Return the view
         return "HistoryLog";

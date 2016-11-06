@@ -22,32 +22,30 @@
 
                 <h1 class="title">History Log</h1>
                 
-                <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
-                <%--that is added to the model that is passed to the view.--%>
-                <%--See exerciseController, method addExerciseViewGet(), and find where this attribute is added to the model.--%>
-         
-                
-                <%--Choose what code to generate based on tests that we implement--%>
                 <c:choose>
                     <%--If the model has an attribute with the name `exercises`--%>
                     <c:when test="${not empty exercises}">
-                        <%--Create a table for the exercise Notes--%>
-                        <table class="exercises">
-
-                            <%--For each exercise note, that is in the list that was passed in the model--%>
-                            <%--generate a row in the table--%>
-                            <%--Here we set `exercise` as a singular item out of the list `exercises`--%>
+                        <%--Create a table--%>
+                        <table class="table">
+                        	<thead>
+                        		<th>
+                        			<td><b>Date</b></td>
+                        			<td><b>Exercise</b></td>
+                        			<td><b>Reps</b</td>
+                        			<td><b>Kilograms</b></td>
+                        		</th>
+                        	</thead>
+							<tbody>
                             <c:forEach var="exercise" items="${exercises}">
                                 <tr>
-                                    <%--We can reference attributes of the Entity by just entering the name we gave--%>
-                                    <%--it in the singular item var, and then just a dot followed by the attribute name--%>
-
-                                    <%--Create a link based on the name attribute value--%>
-                                    <td><a href="/exercises/${exercise.name}">${exercise.name}</a></td>
-                                    <%--The String in the note attribute--%>
-                                    <td>${exercise.type}</td>
+                                	<td></td>
+                                    <td>${exercise.date}</td>
+                                    <td>${exercise.exerciseID}</td>
+                                    <td>${exercise.unit2}</td>
+                                    <td>${exercise.unit1}</td>
                                 </tr>
                             </c:forEach>
+                            </tbody>
                         </table>
                     </c:when>
 
