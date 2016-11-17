@@ -2,9 +2,9 @@ package project.service;
 
 import project.persistence.entities.User;
 
-import java.util.List;
-
 public interface UserService {
+
+
 
     /**
      * Save a {@link User}
@@ -19,5 +19,9 @@ public interface UserService {
      * @return All {@link User}s with the {@link String username} passed
      */
     User findByUsername(String username);
+
+    User getLoggedInUser();
+
+    User loggedInUser = null;
 
 }

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import project.persistence.entities.User;
 import project.persistence.entities.BMI;
+import project.service.Implementation.UserServiceImplementation;
 import project.service.UserService;
 import project.service.FormulaService;
 
@@ -30,8 +31,9 @@ public class UserController {
     @RequestMapping(value = "/viewProfile", method = RequestMethod.GET)
     public String viewProfileGetView(Model model){
 
-    	// mock object User
-        User user = userService.findByUsername("tester1");
+    	// get logged in user
+        User user = UserServiceImplementation.loggedInUser;
+
 
         // connect object User to the form
         model.addAttribute("user", user);

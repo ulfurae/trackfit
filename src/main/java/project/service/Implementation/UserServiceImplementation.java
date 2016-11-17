@@ -1,13 +1,12 @@
 package project.service.Implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import project.persistence.entities.User;
 import project.persistence.repositories.UserRepository;
 import project.service.UserService;
-
-import java.util.Collections;
-import java.util.List;
 
 @Service
 public class UserServiceImplementation implements UserService {
@@ -21,6 +20,7 @@ public class UserServiceImplementation implements UserService {
         this.repository = repository;
     }
 
+
     @Override
     public User save(User user) {
         return repository.save(user);
@@ -30,4 +30,18 @@ public class UserServiceImplementation implements UserService {
     public User findByUsername(String username) {
         return repository.findByUsername(username);
     }
+
+    @Override
+    public User getLoggedInUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        if (authentication != null ) {
+            loggedInUser  = findByUsername(authentication.getName());
+            return loggedInUser ;
+        } else {
+            return null;
+        }
+    }
+
+    public static User loggedInUser;
 }

@@ -15,6 +15,7 @@
     <body >
         <main class="container-fluid" style="height:100%">
             <div class="main-container">
+                <span style="float:right" >${user}</span>
                 <a href="/"><span class="logo glyphicon glyphicon-link" ></span></a>
                 <h1>TrackFit</h1>
                 <p>The web app that helps you stay fit.</p>
@@ -29,6 +30,9 @@
                 </ul>
                 <ul style="width:500px; margin:0 auto;">
                     <a class="btn btn-block btn-lg btn-danger btn-main" href="/viewPerformance" role="button">Performance History</a>
+                </ul>
+                <ul style="width:500px; margin:0 auto;">
+                    <a class="btn btn-block btn-lg btn-warning btn-main" href="/logout" role="button">Log Out</a>
                 </ul>
 
             </div>
