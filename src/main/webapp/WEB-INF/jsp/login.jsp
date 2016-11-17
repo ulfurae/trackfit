@@ -28,8 +28,8 @@
                         <c:if test="${fn:length(loginErrorMessage) > 0}">
                             <div class="alert alert-danger"><strong>Woops!</strong> ${loginErrorMessage}</div>
                         </c:if>
-                        <input type="text" name="username" value="" class="form-control" placeholder="Username" >
-                        <input type="password" name="password" class="form-control" placeholder="Password">
+                        <input type="text" name="username" required="true" class="form-control" placeholder="Username" >
+                        <input type="password" name="password" required="true" class="form-control" placeholder="Password">
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
                     </form>
 
