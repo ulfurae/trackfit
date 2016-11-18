@@ -34,7 +34,6 @@ public class UserController {
     	// get logged in user
         User user = UserServiceImplementation.loggedInUser;
 
-
         // connect object User to the form
         model.addAttribute("user", user);
         

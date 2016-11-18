@@ -4,14 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import project.persistence.entities.User;
 import project.persistence.entities.UserExercise;
 import project.service.ExerciseService;
+import project.service.Implementation.UserServiceImplementation;
 import project.service.UserExerciseService;
 
-import java.util.*;
+import java.util.Date;
 
 @Controller
 public class ExerciseController {
@@ -51,9 +52,12 @@ public class ExerciseController {
     @RequestMapping(value = "/addExercise", method = RequestMethod.POST)
     public String addExercisePost(@ModelAttribute("addExercise") UserExercise uExercise, Model model) {
 
+        // get logged in user from global variable UserServiceImplementation.loggedInUser
+        User user = UserServiceImplementation.loggedInUser;
+
         // set mock values into UserExercise for testing
         uExercise.setDate(new Date());
-        uExercise.setUserID(1);
+        uExercise.setUserID(user.getId());
         uExercise.setUserGoalID(0);
 
         // Save the UserExercise that is received from the form
@@ -70,8 +74,11 @@ public class ExerciseController {
     @RequestMapping(value = "/viewPerformance", method = RequestMethod.GET)
     public String userExerciseViewGet(Model model){
 
+        // get logged in user from global variable UserServiceImplementation.loggedInUser
+        User user = UserServiceImplementation.loggedInUser;
+
         // Here we get all the UserExercises (in a reverse order) and add them to the model
-        model.addAttribute("exercises", uExerciseService.findAllReverseOrder());
+        model.addAttribute("exercises", uExerciseService.findByUserID(user.getId()));
 
         // Return the view
         return "HistoryLog";
