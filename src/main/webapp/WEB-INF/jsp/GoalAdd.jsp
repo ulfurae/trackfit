@@ -50,8 +50,8 @@
                 
                 <div class="form-exercise col-md-4">
                 <div class="form-group">
-                    <form method="get" action="/viewPerformance">
-                        <input type="submit" VALUE="Performance History" class="btn btn-success btn-block"/>
+                    <form method="get" action="/viewGoals">
+                        <input type="submit" VALUE="Goals Log" class="btn btn-success btn-block"/>
                     </form>
                 </div>
 				</div>
