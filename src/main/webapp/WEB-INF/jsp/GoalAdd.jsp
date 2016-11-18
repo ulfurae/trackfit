@@ -21,22 +21,41 @@
                 <a href="/"><span class="logo glyphicon glyphicon-link" ></span></a>
 
                 <h1 class="title">Add new goal</h1>
-                <form>
-                    <div class="form-goal col-md-4">
-                        <div class="form-group">
-                            <label>Distance:</label>
-                            <input type="text"/><br>
+                
+                <sf:form method="POST" commandName="goalForm" action="/addGoal">
 
-                            <label>Time:</label>
-                            <input type="text"/><br>
-                       		
-                       		<label>Ending:</label><br>
-                        </div>
+                    <div class="form-exercise col-md-4">
                         <div class="form-group">
-                            <input type="submit" VALUE="Save Goal" class="btn btn-success btn-block"/>
+
+                           <label>Choose exercise:</label>
+                           <sf:select path="exerciseID"  placeholder="Chose exercise" class="form-control">
+                                <sf:option value="1" >Power Clean</sf:option>
+                                <sf:option value="2" >Back squat</sf:option>
+                            </sf:select>
+
+                           <label>Units:</label>
+                           <div>
+                             <sf:input path="unit1" type="text" placeholder="kilo" class="form-control" style="width:33%;  float: left;  margin-right: 5px;  }"/>
+                             <span  style="float: left; margin: 0px 5px 0px 1px;">x</span>
+                             <sf:input path="unit2" type="text" placeholder="reps" class="form-control" style="width:33%; float: left; "/>
+                           </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="form-group">
+                            <input type="submit" VALUE="Save goal" class="btn btn-success btn-block"/>
                         </div>
                     </div>
-                </form>
+                </sf:form>
+                
+                <div class="form-exercise col-md-4">
+                <div class="form-group">
+                    <form method="get" action="/viewPerformance">
+                        <input type="submit" VALUE="Performance History" class="btn btn-success btn-block"/>
+                    </form>
+                </div>
+				</div>
+				
             </div>
         </main>
 
