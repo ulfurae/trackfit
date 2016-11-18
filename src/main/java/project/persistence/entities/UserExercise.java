@@ -1,8 +1,7 @@
 package project.persistence.entities;
 
-import java.util.Date;
-
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "UserExercise")
@@ -14,7 +13,7 @@ public class UserExercise {
     private Long id;
     
     private int userGoalID;
-    private int userID;
+    private long userID;
     private int exerciseID;
 
     private int unit1;
@@ -48,11 +47,11 @@ public class UserExercise {
         this.userGoalID = userGoalID;
     }
 
-    public int getUserID() {
+    public Long getUserID() {
         return userID;
     }
 
-    public void setUserID(int userID) {
+    public void setUserID(long userID) {
         this.userID = userID;
     }
     

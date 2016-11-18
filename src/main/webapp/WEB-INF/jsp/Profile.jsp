@@ -34,17 +34,17 @@
         				</tr>
         				<tr>
         					<td id="userAttr"><b>Height:</b></td>
-        					<td>${user.height}</td>
+        					<td>${user.height} cm</td>
         				</tr>
         				<tr>
         					<td id="userAttr"><b>Weight:</b></td>
-        					<td>${user.weight}</td>
-        					<td><a href="/viewProfile/change">Change Weight</a></td>
+        					<td>${user.weight} kg</td>
+        					<td><a style="margin-left:10px" href="/viewProfile/change">Change weight</a></td>
         				</tr>
         				<tr>
         					<td id="userAttr"><b>BMI:</b></td>
         					<td>${bmi.BMIIndex}</td>
-        					<td><b>${bmi.idealWeight}</b></td>
+        					<td><span style="font-style:italic"> - ${bmi.idealWeight}</span></td>
         				</tr>
         			</tbody>
         		</table>

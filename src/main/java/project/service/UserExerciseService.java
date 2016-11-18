@@ -43,6 +43,6 @@ public interface UserExerciseService {
      * @param userID {@link Integer}
      * @return All {@link UserExercise}s with the {@link Integer userID} passed
      */
-    List<UserExercise> findByUserID(int userID);
+    List<UserExercise> findByUserID(Long userID);
 
 }
