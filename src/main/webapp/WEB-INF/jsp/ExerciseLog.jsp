@@ -7,11 +7,10 @@
 <html lang="en">
 
     <head>
-        <title>TrackFit - Goals Log</title>
+        <title>TrackFit - Exercise Log</title>
         <%--Bootstrap CSS--%>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
         <%--Local CSS--%>
-        <link rel="stylesheet" type="text/css" href="<c:url value="/css/postitnote.css"/>"/>
         <link rel="stylesheet" type="text/css" href="<c:url value="/css/trackFitMain.css"/>"/>
     </head>
     <body >
@@ -20,33 +19,30 @@
             <div class="main-container">
                 <a href="/"><span class="logo glyphicon glyphicon-link" ></span></a>
 
-                <h1 class="title">Goals Log</h1>
+                <h1 class="title">Exercise Log</h1>
                 
                 <c:choose>
-                    <%--If the model has an attribute with the name `goals`--%>
-                    <c:when test="${not empty goals}">
+                    <%--If the model has an attribute with the name `exercises`--%>
+                    <c:when test="${not empty exercises}">
                         <%--Create a table--%>
-                        <table class="table">
+                        <table class="table table-history">
                         	<thead>
-                        		<th>
-                        			<td><b>StartDate</b></td>
-                        			<td><b>EndDate</b></td>
+
+                        			<td><b>Date</b></td>
                         			<td><b>Exercise</b></td>
                         			<td><b>Reps</b</td>
                         			<td><b>Kilograms</b></td>
-                        			<td><b>Status</b></td>
-                        		</th>
+                        			<td><b>Type</b></td>
+
                         	</thead>
 							<tbody>
-                            <c:forEach var="goal" items="${goals}">
+                            <c:forEach var="exercise" items="${exercises}">
                                 <tr>
-                                	<td></td>
-                                    <td>${goal.startDate}</td>
-                                    <td>${goal.endDate}</td>
-                                    <td>${goal.exerciseID}</td>
-                                    <td>${goal.unit2}</td>
-                                    <td>${goal.unit1}</td>
-                                    <td>${goal.status}</td>
+                                    <td style="width:100px">${exercise[4]}</td>
+                                    <td>${exercise[1]}</td>
+                                    <td>${exercise[2]}</td>
+                                    <td>${exercise[3]}</td>
+                                    <td>${exercise[6]}</td>
                                 </tr>
                             </c:forEach>
                             </tbody>
@@ -55,7 +51,7 @@
 
                     <%--If all tests are false, then do this--%>
                     <c:otherwise>
-                        <h3>No goals!</h3>
+                        <h3>No notes!</h3>
                     </c:otherwise>
                 </c:choose>
 

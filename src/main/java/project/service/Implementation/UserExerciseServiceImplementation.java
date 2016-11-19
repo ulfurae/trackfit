@@ -57,4 +57,7 @@ public class UserExerciseServiceImplementation implements UserExerciseService {
         return repository.findByUserID(userID);
     }
 
+    @Override
+    public List<Object[]> findAllUserExercises(Long userID) {return repository.findAllUserExercises(userID); }
+
 }

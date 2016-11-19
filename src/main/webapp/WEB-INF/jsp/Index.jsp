@@ -19,20 +19,20 @@
                 <a href="/"><span class="logo glyphicon glyphicon-link" ></span></a>
                 <h1>TrackFit</h1>
                 <p>The web app that helps you stay fit.</p>
-				<ul class="main-btn-ul">
-					<a class="btn btn-block btn-lg btn-danger btn-main" href="/viewProfile" role="button">Profile</a>
-				</ul>
-				<ul class="main-btn-ul">
-					<a class="btn btn-block btn-lg btn-danger btn-main" href="/addGoal" role="button">Add Goals</a>
-				</ul>
                 <ul class="main-btn-ul">
                     <a class="btn btn-block btn-lg btn-danger btn-main" href="/addExercise" role="button">Add Exercise</a>
                 </ul>
+				<ul class="main-btn-ul">
+					<a class="btn btn-block btn-lg btn-danger btn-main" href="/addGoal" role="button">Add Goal</a>
+				</ul>
                 <ul class="main-btn-ul">
-                    <a class="btn btn-block btn-lg btn-danger btn-main" href="/viewPerformance" role="button">Performance History</a>
+                    <a class="btn btn-block btn-lg btn-danger btn-main" href="/exerciseLog" role="button">Exercise Log</a>
                 </ul>
                 <ul class="main-btn-ul">
-                    <a class="btn btn-block btn-lg btn-danger btn-main" href="/viewGoals" role="button">Goals Log</a>
+                    <a class="btn btn-block btn-lg btn-danger btn-main" href="/goalLog" role="button">Goal Log</a>
+                </ul>
+                <ul class="main-btn-ul">
+                    <a class="btn btn-block btn-lg btn-danger btn-main" href="/profile" role="button">Profile</a>
                 </ul>
                 <ul class="main-btn-ul">
                     <a class="btn btn-block btn-lg btn-warning btn-main" href="/logout" role="button">Log Out</a>

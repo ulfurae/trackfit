@@ -1,6 +1,7 @@
 package project.persistence.entities;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -12,9 +13,9 @@ public class UserExercise {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    private int userGoalID;
-    private long userID;
-    private int exerciseID;
+    private Long userGoalID;
+    private Long userID;
+    private Long exerciseID;
 
     private int unit1;
     private int unit2;
@@ -22,7 +23,7 @@ public class UserExercise {
 
     public UserExercise() { }
 
-    public UserExercise(int userGoalID, int userID, int exerciseID, int unit1, int unit2, Date date) {
+    public UserExercise(Long userGoalID, Long userID, Long exerciseID, int unit1, int unit2, Date date) {
         this.userGoalID = userGoalID;
         this.userID = userID;
         this.exerciseID = exerciseID;
@@ -39,11 +40,11 @@ public class UserExercise {
         this.id = id;
     }
 
-    public int getUserGoalID() {
+    public Long getUserGoalID() {
         return userGoalID;
     }
 
-    public void setUserGoalID(int userGoalID) {
+    public void setUserGoalID(long userGoalID) {
         this.userGoalID = userGoalID;
     }
 
@@ -51,15 +52,15 @@ public class UserExercise {
         return userID;
     }
 
-    public void setUserID(long userID) {
+    public void setUserID(Long userID) {
         this.userID = userID;
     }
     
-    public int getExerciseID() {
+    public Long getExerciseID() {
         return exerciseID;
     }
 
-    public void setExerciseID(int exerciseID) {
+    public void setExerciseID(Long exerciseID) {
         this.exerciseID = exerciseID;
     }
     
@@ -76,9 +77,11 @@ public class UserExercise {
     public void setUnit2(int unit2) {
         this.unit2 = unit2;
     }
-    
-    public Date getDate() {
-        return date;
+
+    private SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+    public String getDate() {
+
+        return format.format(date);
     }
 
     public void setDate(Date date) {

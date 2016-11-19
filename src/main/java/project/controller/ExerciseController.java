@@ -12,7 +12,9 @@ import project.service.ExerciseService;
 import project.service.Implementation.UserServiceImplementation;
 import project.service.UserExerciseService;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Controller
 public class ExerciseController {
@@ -58,7 +60,7 @@ public class ExerciseController {
         // set mock values into UserExercise for testing
         uExercise.setDate(new Date());
         uExercise.setUserID(user.getId());
-        uExercise.setUserGoalID(0);
+        uExercise.setUserGoalID((long) 0);
 
         // Save the UserExercise that is received from the form
         uExerciseService.save(uExercise);
@@ -71,17 +73,24 @@ public class ExerciseController {
     }
     
  // GET method that returns the view for the URL /viewPerformace
-    @RequestMapping(value = "/viewPerformance", method = RequestMethod.GET)
-    public String userExerciseViewGet(Model model){
+    @RequestMapping(value = "/exerciseLog", method = RequestMethod.GET)
+    public String viewExerciseLogGet(Model model){
 
         // get logged in user from global variable UserServiceImplementation.loggedInUser
         User user = UserServiceImplementation.loggedInUser;
 
+        List<Object[]> ulll =  uExerciseService.findAllUserExercises(user.getId());
+
+        List el2 = new ArrayList();
+        //List<UserExerciseDetails> u = (List<UserExerciseDetails>) ulll;
+        System.out.println(ulll.get(0)[0]);
+
+
         // Here we get all the UserExercises (in a reverse order) and add them to the model
-        model.addAttribute("exercises", uExerciseService.findByUserID(user.getId()));
+        model.addAttribute("exercises", ulll);
 
         // Return the view
-        return "HistoryLog";
+        return "ExerciseLog";
     }
     
   

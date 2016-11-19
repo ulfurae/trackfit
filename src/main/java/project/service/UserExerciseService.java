@@ -45,4 +45,6 @@ public interface UserExerciseService {
      */
     List<UserExercise> findByUserID(Long userID);
 
+    List<Object[]> findAllUserExercises(Long userID);
+
 }

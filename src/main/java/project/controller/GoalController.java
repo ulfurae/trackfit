@@ -1,18 +1,15 @@
 package project.controller;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import project.persistence.entities.UserExercise;
 import project.persistence.entities.UserGoal;
 import project.service.GoalService;
+
+import java.util.Date;
 
 @Controller
 public class GoalController {
@@ -67,14 +64,14 @@ public class GoalController {
     }
     
  // GET method that returns the view for the URL /viewPerformace
-    @RequestMapping(value = "/viewGoals", method = RequestMethod.GET)
-    public String userGoalViewGet(Model model){
+    @RequestMapping(value = "/goalLog", method = RequestMethod.GET)
+    public String viewGoalLogGet(Model model){
 
         // Here we get all the UserExercises (in a reverse order) and add them to the model
         model.addAttribute("goals", goalService.findAllReverseOrder());
 
         // Return the view
-        return "GoalsLog";
+        return "GoalLog";
     }
     
 }

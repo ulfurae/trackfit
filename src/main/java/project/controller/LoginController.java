@@ -38,7 +38,7 @@ public class LoginController {
     public ModelAndView loginPage(Model model) {
 
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("login");
+        modelAndView.setViewName("Login");
 
         // connect User object to the sign up form
         model.addAttribute("regForm", new User());
@@ -80,7 +80,7 @@ public class LoginController {
 
         // update model with error message
         modelAndView.addObject("loginErrorMessage", "Login failed, please try again.");
-        modelAndView.setViewName("login");
+        modelAndView.setViewName("Login");
         // connect User object to the sign up form
         model.addAttribute("regForm", new User());
 

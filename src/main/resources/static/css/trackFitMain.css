@@ -75,6 +75,11 @@ body {
      float: left;
 }
 
+.table-history {
+    width: 60%;
+    margin: 0px auto;
+}
+
 label {
     margin: 6px 0 2px;
 }
@@ -86,4 +91,39 @@ label {
     margin-left: 0;
   }
 
+}
+
+@media (max-width: 992px) {
+
+
+  .table-history {
+      width: 100%;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .main-container {
+    padding: 5px;
+  }
+
+  .logo {
+    left: 20px;
+    top:8px;
+  }
+
+  td { padding: 5px !important }
+
+}
+
+@media (max-width: 552px) {
+
+  .title {
+    margin: 9px 45px 18px !important;
+    line-height: 32px !important;
+  }
+  .main-btn-ul {
+     padding: 0 5px;
+  }
 }

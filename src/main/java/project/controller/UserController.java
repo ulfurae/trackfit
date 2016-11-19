@@ -28,8 +28,8 @@ public class UserController {
     }
 
     // Method that returns the view for the URL /viewProfile
-    @RequestMapping(value = "/viewProfile", method = RequestMethod.GET)
-    public String viewProfileGetView(Model model){
+    @RequestMapping(value = "/profile", method = RequestMethod.GET)
+    public String viewProfileGet(Model model){
 
     	// get logged in user
         User user = UserServiceImplementation.loggedInUser;
@@ -49,7 +49,7 @@ public class UserController {
     
     // Method that receives the POST request on the URL /viewProfile
     @RequestMapping(value = "/viewProfile", method = RequestMethod.POST)
-    public String viewProfilePostView(@ModelAttribute("newUser") User newUser,
+    public String viewProfilePost(@ModelAttribute("newUser") User newUser,
                                      Model model){
     	
     	// mock Object User updating weight information
@@ -73,7 +73,7 @@ public class UserController {
     
     // Method that returns the view for the URL /viewProfile/change to update User information
     @RequestMapping(value = "/viewProfile/change", method = RequestMethod.GET)
-    public String viewProfileChangeView(Model model){
+    public String viewProfileChange(Model model){
     	
     	// connect User object to the form
     	model.addAttribute("newUser", new User());

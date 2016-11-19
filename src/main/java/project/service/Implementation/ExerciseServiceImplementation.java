@@ -56,4 +56,6 @@ public class ExerciseServiceImplementation implements ExerciseService {
     public List<Exercise> findByName(String name) {
         return repository.findByName(name);
     }
+
+
 }
