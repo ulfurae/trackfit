@@ -55,7 +55,7 @@
 
                     <%--If all tests are false, then do this--%>
                     <c:otherwise>
-                        <h3>No goals!</h3>
+                        <h3>You have not made any goals. Where is the ambition man? </h3>
                     </c:otherwise>
                 </c:choose>
 

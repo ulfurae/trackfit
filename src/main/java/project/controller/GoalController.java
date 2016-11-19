@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import project.persistence.entities.User;
 import project.persistence.entities.UserGoal;
 import project.service.GoalService;
+import project.service.Implementation.UserServiceImplementation;
 
 import java.util.Date;
 
@@ -50,7 +52,7 @@ public class GoalController {
         // set mock values into UserGoal for testing
         uGoal.setStartDate(new Date());
         uGoal.setEndDate(new Date());
-        uGoal.setUserID(1);
+        uGoal.setUserID((long) 1);
         uGoal.setStatus("not completed");
 
         // Save the UserGoal that is received from the form
@@ -67,8 +69,11 @@ public class GoalController {
     @RequestMapping(value = "/goalLog", method = RequestMethod.GET)
     public String viewGoalLogGet(Model model){
 
+        // get logged in user from global variable UserServiceImplementation.loggedInUser
+        User user = UserServiceImplementation.loggedInUser;
+
         // Here we get all the UserExercises (in a reverse order) and add them to the model
-        model.addAttribute("goals", goalService.findAllReverseOrder());
+        model.addAttribute("goals", goalService.findByUserID(user.getId()));
 
         // Return the view
         return "GoalLog";

@@ -51,7 +51,7 @@
 
                     <%--If all tests are false, then do this--%>
                     <c:otherwise>
-                        <h3>No notes!</h3>
+                        <h3>You have not done any exercises. Why you so lazy?</h3>
                     </c:otherwise>
                 </c:choose>
 

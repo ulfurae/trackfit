@@ -43,8 +43,8 @@
                         <sf:input type="password" path="pass"  required="true" class="form-control" placeholder="Password" />
                         <sf:input type="text" path="fullName" required="true" class="form-control" placeholder="Full name" />
                         <sf:input type="text" id="datepicker" required="true" path="birthday" class="form-control" placeholder="Birthday" />
-                        <sf:input type="number" path="height" required="true" class="form-control" placeholder="Height (cm)" />
-                        <sf:input type="number" path="weight" required="true" class="form-control" placeholder="Weight (kg)" />
+                        <sf:input type="number" path="height" required="true" min="0" max="300" class="form-control" placeholder="Height (cm)" />
+                        <sf:input type="number" path="weight" required="true" min="0" max="1000" class="form-control" placeholder="Weight (kg)" />
 
                         <button class="btn btn-lg btn-success btn-block" type="submit">Sign up</button>
                     </sf:form>

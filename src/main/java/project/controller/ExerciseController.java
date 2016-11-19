@@ -12,7 +12,6 @@ import project.service.ExerciseService;
 import project.service.Implementation.UserServiceImplementation;
 import project.service.UserExerciseService;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -79,15 +78,10 @@ public class ExerciseController {
         // get logged in user from global variable UserServiceImplementation.loggedInUser
         User user = UserServiceImplementation.loggedInUser;
 
-        List<Object[]> ulll =  uExerciseService.findAllUserExercises(user.getId());
-
-        List el2 = new ArrayList();
-        //List<UserExerciseDetails> u = (List<UserExerciseDetails>) ulll;
-        System.out.println(ulll.get(0)[0]);
-
+        List<Object[]> list = uExerciseService.findAllUserExercises(user.getId());
 
         // Here we get all the UserExercises (in a reverse order) and add them to the model
-        model.addAttribute("exercises", ulll);
+        model.addAttribute("exercises", list);
 
         // Return the view
         return "ExerciseLog";

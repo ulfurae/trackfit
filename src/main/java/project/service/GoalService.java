@@ -1,6 +1,5 @@
 package project.service;
 
-import project.persistence.entities.UserExercise;
 import project.persistence.entities.UserGoal;
 
 import java.util.List;
@@ -44,6 +43,6 @@ public interface GoalService {
      * @param userID {@link Integer}
      * @return All {@link UserGoal}s with the {@link Integer userID} passed
      */
-    List<UserGoal> findByUserID(int userID);
+    List<UserGoal> findByUserID(Long userID);
 
 }

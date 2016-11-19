@@ -1,8 +1,7 @@
 package project.persistence.entities;
 
-import java.util.Date;
-
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "UserGoal")
@@ -13,8 +12,8 @@ public class UserGoal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    private int userID;
-    private int exerciseID; 
+    private Long userID;
+    private Long exerciseID;
     private int unit1;
     private int unit2;
     private Date startDate;
@@ -23,7 +22,7 @@ public class UserGoal {
 
     public UserGoal() {  }
     
-    public UserGoal(int userID, int exerciseID, int unit1, int unit2, Date startDate, Date endDate, String status) {
+    public UserGoal(Long userID, Long exerciseID, int unit1, int unit2, Date startDate, Date endDate, String status) {
         this.userID = userID;
         this.exerciseID = exerciseID;
     	this.unit1 = unit1;
@@ -41,19 +40,19 @@ public class UserGoal {
         this.id = id;
     }
     
-	public int getUserID() {
+	public Long getUserID() {
 		return userID;
 	}
 
-	public void setUserID(int userID) {
+	public void setUserID(Long userID) {
 		this.userID = userID;
 	}
 
-	public int getExerciseID() {
+	public Long getExerciseID() {
 		return exerciseID;
 	}
 
-	public void setExerciseID(int exerciseID) {
+	public void setExerciseID(Long exerciseID) {
 		this.exerciseID = exerciseID;
 	}
 
