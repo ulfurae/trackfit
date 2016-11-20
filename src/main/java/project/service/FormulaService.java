@@ -1,5 +1,8 @@
 package project.service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.springframework.stereotype.Service;
 import project.persistence.entities.BMI;
 
@@ -34,5 +37,15 @@ public class FormulaService {
         bmi.setBMIIndex(BMIIndex);
         bmi.setIdealWeight(idealWeight);
         return bmi;
+    }
+    
+    public String changeDateFormat(Date birthday) {
+    	String NEW_FORMAT = "dd/MM/yyyy";
+    	String newBirthday;
+    	
+    	SimpleDateFormat formatter = new SimpleDateFormat(NEW_FORMAT);
+    	newBirthday = formatter.format(birthday);
+    	
+    	return newBirthday;
     }
 }

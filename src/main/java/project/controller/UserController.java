@@ -42,6 +42,10 @@ public class UserController {
         
         // connect object BMI to the form
         model.addAttribute("bmi", BMI);
+        
+        String newBirthday = formulaService.changeDateFormat(user.getBirthday());
+    	
+    	model.addAttribute("newBirthday", newBirthday);
 
         // Return the view
         return "Profile";
@@ -53,19 +57,23 @@ public class UserController {
                                      Model model){
     	
     	// mock Object User updating weight information
-    	User oldUser = userService.findByUsername("tester1");
+    	User oldUser = UserServiceImplementation.loggedInUser;
     	int weight = newUser.getWeight();
     	oldUser.setWeight(weight);
     	userService.save(oldUser);
     	
     	// mock Object User BMI changes if weight is updated
-    	User updatedUser = userService.findByUsername("tester1");
+    	User updatedUser = UserServiceImplementation.loggedInUser;
     	// connect User object to the form
     	model.addAttribute("user", updatedUser);
     	// update BMI
     	BMI BMI = formulaService.BMICalculate(updatedUser.getHeight(), updatedUser.getWeight());
 	   	// connect BMI object to the form
     	model.addAttribute("bmi", BMI);
+    	
+    	String newBirthday = formulaService.changeDateFormat(updatedUser.getBirthday());
+    	
+    	model.addAttribute("newBirthday", newBirthday);
 
         // Return the view
         return "Profile";

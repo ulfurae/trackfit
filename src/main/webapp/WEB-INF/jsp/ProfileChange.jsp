@@ -22,12 +22,12 @@
 
                 <h1 class="title">Change Profile</h1>
         		
-        		<sf:form method="POST" commandName="newUser" action="/viewProfile">
+        		<sf:form method="POST" commandName="newUser" action="/viewProfile" id="changeForm">
 
                     <div class="form-exercise col-md-4">
                         <div class="form-group">
-                            <label>Weight:</label>
-                            <sf:input path="weight" type="text" placeholder="Enter weight" class="form-control"/>
+                            <label>Weight (kg):</label>
+                            <sf:input path="weight" type="number" placeholder="Enter weight" class="form-control"/>
                         </div>
                         <div class="form-group">
                             <input type="submit" VALUE="Change Weight" class="btn btn-success btn-block"/>
@@ -36,7 +36,11 @@
                 </sf:form>
             </div>
         </main>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script>
 
+    	$("#changeForm").find("input[type='number']").val("");
 
+    </script>
     </body>
 </html>

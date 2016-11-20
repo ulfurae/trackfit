@@ -40,8 +40,8 @@
                                 <tr>
                                     <td style="width:100px">${exercise[4]}</td>
                                     <td>${exercise[1]}</td>
-                                    <td>${exercise[2]}</td>
                                     <td>${exercise[3]}</td>
+                                    <td>${exercise[2]}</td>
                                     <td>${exercise[6]}</td>
                                 </tr>
                             </c:forEach>

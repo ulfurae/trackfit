@@ -30,7 +30,7 @@
         				</tr>
         				<tr>
         					<td id="userAttr"><b>Birthday:</b></td>
-        					<td>${user.birthday}</td>
+        					<td>${newBirthday}</td>
         				</tr>
         				<tr>
         					<td id="userAttr"><b>Height:</b></td>
