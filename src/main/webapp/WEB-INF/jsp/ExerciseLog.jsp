@@ -30,9 +30,9 @@
 
                         			<td><b>Date</b></td>
                         			<td><b>Exercise</b></td>
+                        			<td><b>Type</b></td>
                         			<td><b>Reps</b</td>
                         			<td><b>Kilograms</b></td>
-                        			<td><b>Type</b></td>
 
                         	</thead>
 							<tbody>
@@ -40,9 +40,9 @@
                                 <tr>
                                     <td style="width:100px">${exercise[4]}</td>
                                     <td>${exercise[1]}</td>
+                                    <td>${exercise[6]}</td>
                                     <td>${exercise[3]}</td>
                                     <td>${exercise[2]}</td>
-                                    <td>${exercise[6]}</td>
                                 </tr>
                             </c:forEach>
                             </tbody>
