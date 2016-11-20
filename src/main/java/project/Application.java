@@ -41,8 +41,16 @@ public class Application extends SpringBootServletInitializer{
             List exerciseList = repository.findAll();
             // if exercise table is empty then input exercises
             if(exerciseList.size()==0) {
+                repository.save(new Exercise("Back Squat", "Weightlifting"));
+                repository.save(new Exercise("Bench Press", "Weightlifting"));
+                repository.save(new Exercise("Deadlift", "Weightlifting"));
+                repository.save(new Exercise("Front Squat", "Weightlifting"));
                 repository.save(new Exercise("Power Clean", "Weightlifting"));
-                repository.save(new Exercise("Back squat", "Weightlifting"));
+                repository.save(new Exercise("Push Jerk", "Weightlifting"));
+                repository.save(new Exercise("Push Press", "Weightlifting"));
+                repository.save(new Exercise("Shoulder Press", "Weightlifting"));
+                repository.save(new Exercise("Snatch", "Weightlifting"));
+                repository.save(new Exercise("Split Jerk", "Weightlifting"));
             }
         };
     }
