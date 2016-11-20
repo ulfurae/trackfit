@@ -30,8 +30,16 @@
 
                            <label>Choose exercise:</label>
                            <sf:select path="exerciseID"  placeholder="Chose exercise" class="form-control" required="true">
-                                <sf:option value="1" >Power Clean</sf:option>
-                                <sf:option value="2" >Back squat</sf:option>
+                                <sf:option value="1" >Back Squat</sf:option>
+                                <sf:option value="2" >Bench Press</sf:option>
+                                <sf:option value="3" >Deadlift</sf:option>
+                                <sf:option value="4" >Front Squat</sf:option>
+                                <sf:option value="5" >Power Clean</sf:option>
+                                <sf:option value="6" >Push Jerk</sf:option>
+                                <sf:option value="7" >Push Press</sf:option>
+                                <sf:option value="8" >Shoulder Press</sf:option>
+                                <sf:option value="9" >Snatch</sf:option>
+                                <sf:option value="10" >Split Jerk</sf:option>
                             </sf:select>
 
                            <label>Units:</label>

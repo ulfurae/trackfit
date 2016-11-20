@@ -31,8 +31,8 @@
                         			<td><b>Start</b></td>
                         			<td><b>End</b></td>
                         			<td><b>Exercise</b></td>
-                        			<td><b>Reps</b</td>
                         			<td><b>Kilograms</b></td>
+                        			<td><b>Reps</b</td>
                         			<td><b>Status</b></td>
 
                         	</thead>
@@ -43,8 +43,8 @@
                                     <td>${goal[4]}</td>
                                     <td>${goal[5]}</td>
                                     <td>${goal[1]}</td>
-                                    <td>${goal[2]}</td>
                                     <td>${goal[3]}</td>
+                                    <td>${goal[2]}</td>
                                     <td>${goal[8]}</td>
                                </tr>
                             </c:forEach>
