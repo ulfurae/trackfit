@@ -78,9 +78,8 @@ public class UserExercise {
         this.unit2 = unit2;
     }
 
-    private SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+    private SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
     public String getDate() {
-
         return format.format(date);
     }
 

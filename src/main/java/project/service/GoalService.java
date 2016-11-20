@@ -45,4 +45,9 @@ public interface GoalService {
      */
     List<UserGoal> findByUserID(Long userID);
 
+    List<Object[]> findAllUserGoals(Long userID);
+
+    List<Object[]> findOneUserGoal(Long userID, Long userGoalID );
+
+
 }

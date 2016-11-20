@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import project.persistence.entities.User;
@@ -11,7 +12,6 @@ import project.persistence.entities.UserGoal;
 import project.service.GoalService;
 import project.service.Implementation.UserServiceImplementation;
 
-import java.util.Date;
 
 @Controller
 public class GoalController {
@@ -49,10 +49,10 @@ public class GoalController {
     @RequestMapping(value = "/addGoal", method = RequestMethod.POST)
     public String addGoalPost(@ModelAttribute("addGoal") UserGoal uGoal, Model model) {
 
-        // set mock values into UserGoal for testing
-        uGoal.setStartDate(new Date());
-        uGoal.setEndDate(new Date());
-        uGoal.setUserID((long) 1);
+        // get logged in user from global variable UserServiceImplementation.loggedInUser
+        User user = UserServiceImplementation.loggedInUser;
+
+        uGoal.setUserID(user.getId());
         uGoal.setStatus("not completed");
 
         // Save the UserGoal that is received from the form
@@ -72,11 +72,32 @@ public class GoalController {
         // get logged in user from global variable UserServiceImplementation.loggedInUser
         User user = UserServiceImplementation.loggedInUser;
 
-        // Here we get all the UserExercises (in a reverse order) and add them to the model
-        model.addAttribute("goals", goalService.findByUserID(user.getId()));
+        // Here we get all the UserExercises by userID and add them to the model
+        model.addAttribute("goals", goalService.findAllUserGoals(user.getId()));
 
         // Return the view
         return "GoalLog";
+    }
+
+    // Method that returns the correct view for the URL /postit/{name}
+    // The {name} part is a Path Variable, and we can reference that in our method
+    // parameters as a @PathVariable. This enables us to create dynamic URLs that are
+    // based on the data that we have.
+    // This method finds all Postit Notes posted by someone with the requested {name}
+    // and returns a list with all those Postit Notes.
+    @RequestMapping(value = "/goal/{id}", method = RequestMethod.GET)
+    public String userGoalGet(@PathVariable Long id,
+                                             Model model){
+
+        // get logged in user from global variable UserServiceImplementation.loggedInUser
+        User user = UserServiceImplementation.loggedInUser;
+
+        // Get UserGoal with this id and add it to the model
+        model.addAttribute("goal", goalService.findOneUserGoal(user.getId(), id).get(0));
+
+
+        // Return the view
+        return "UserGoal";
     }
     
 }

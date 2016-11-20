@@ -13,6 +13,7 @@
         <%--Local CSS--%>
         <link rel="stylesheet" type="text/css" href="<c:url value="/css/postitnote.css"/>"/>
         <link rel="stylesheet" type="text/css" href="<c:url value="/css/trackFitMain.css"/>"/>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     </head>
     <body >
 
@@ -34,10 +35,15 @@
                             </sf:select>
 
                            <label>Units:</label>
-                           <div>
-                             <sf:input path="unit1" type="number" placeholder="kg" min="0" max="1000" class="form-control" required="true" style="width:33%;  float: left;  margin-right: 5px;  }"/>
+                           <div class="form-group">
+                             <sf:input path="unit1" type="number" placeholder="kg" min="0" max="1000" class="form-control" required="true" style="width:33%;  float: left;  margin-right: 5px;"/>
                              <span  style="float: left; margin: 0px 5px 0px 1px;">x</span>
                              <sf:input path="unit2" type="number" placeholder="reps" min="0" max="1000" class="form-control" required="true" style="width:33%; float: left; "/>
+                           </div>
+                           <label>Start and end date:</label>
+                           <div class="form-group">
+                              <sf:input type="text" id="startdatepicker" required="true" path="startDate" class="form-control" placeholder="Start date" style="width:45%;  float: left;  margin-right: 5px;"/>
+                                <sf:input type="text" id="enddatepicker" required="true" path="endDate" class="form-control" placeholder="End date" style="width:45%;  float: left;"/>
                            </div>
                         </div>
                         <br><br>
@@ -54,11 +60,21 @@
             </div>
         </main>
 
-          <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-          <script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
 
-               $("#saveForm" ).find("input[type='number']").val("");
+             $("#enddatepicker").datepicker();
+             $("#startdatepicker").datepicker();
+             $("#startdatepicker").datepicker().bind("change",function(){
+                                                           var minValue = $(this).val();
+                                                           minValue.setDate(minValue.getDate()+1);
+                                                           $("#enddatepicker").datepicker( "option", "minDate", minValue );
+                                                           });
 
-          </script>
+             $("#saveForm" ).find("input[type='number']").val("");
+             $("#saveForm" ).find("input[type='text']").val("");
+
+        </script>
     </body>
 </html>

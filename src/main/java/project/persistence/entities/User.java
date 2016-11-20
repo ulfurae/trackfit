@@ -1,8 +1,7 @@
 package project.persistence.entities;
 
-import java.util.Date;
-
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "Users")
@@ -17,6 +16,7 @@ public class User {
     private String pass; 
     private String fullName;
     private Date birthday;
+
     private int height;
     private int weight;
     private int BMI;
@@ -68,7 +68,6 @@ public class User {
 	public Date getBirthday() {
 		return birthday;
 	}
-
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}

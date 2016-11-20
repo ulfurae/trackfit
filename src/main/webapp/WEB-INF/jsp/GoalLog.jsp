@@ -11,7 +11,6 @@
         <%--Bootstrap CSS--%>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
         <%--Local CSS--%>
-        <link rel="stylesheet" type="text/css" href="<c:url value="/css/postitnote.css"/>"/>
         <link rel="stylesheet" type="text/css" href="<c:url value="/css/trackFitMain.css"/>"/>
     </head>
     <body >
@@ -28,26 +27,26 @@
                         <%--Create a table--%>
                         <table class="table">
                         	<thead>
-                        		<th>
-                        			<td><b>StartDate</b></td>
-                        			<td><b>EndDate</b></td>
+                        		    <td><b>Goal number</b></td>
+                        			<td><b>Start</b></td>
+                        			<td><b>End</b></td>
                         			<td><b>Exercise</b></td>
                         			<td><b>Reps</b</td>
                         			<td><b>Kilograms</b></td>
                         			<td><b>Status</b></td>
-                        		</th>
+
                         	</thead>
 							<tbody>
                             <c:forEach var="goal" items="${goals}">
-                                <tr>
-                                	<td></td>
-                                    <td>${goal.startDate}</td>
-                                    <td>${goal.endDate}</td>
-                                    <td>${goal.exerciseID}</td>
-                                    <td>${goal.unit2}</td>
-                                    <td>${goal.unit1}</td>
-                                    <td>${goal.status}</td>
-                                </tr>
+                               <tr onclick="window.location='/goal/${goal[0]}';" class="tr-button" role="button">
+                                	<td>${goal[0]}</td>
+                                    <td>${goal[4]}</td>
+                                    <td>${goal[5]}</td>
+                                    <td>${goal[1]}</td>
+                                    <td>${goal[2]}</td>
+                                    <td>${goal[3]}</td>
+                                    <td>${goal[8]}</td>
+                               </tr>
                             </c:forEach>
                             </tbody>
                         </table>

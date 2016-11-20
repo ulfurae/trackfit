@@ -57,5 +57,11 @@ public class GoalServiceImplementation implements GoalService {
     public List<UserGoal> findByUserID(Long userID) {
         return repository.findByUserID(userID);
     }
-    
+
+    @Override
+    public List<Object[]> findAllUserGoals(Long userID) { return repository.findAllUserGoals(userID); }
+
+    @Override
+    public List<Object[]> findOneUserGoal(Long userID, Long userGoalID) {return repository.findOneUserGoal(userID, userGoalID); }
+
 }

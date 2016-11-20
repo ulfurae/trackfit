@@ -80,6 +80,35 @@ body {
     margin: 0px auto;
 }
 
+.tr-button {
+}
+.tr-button:hover {
+    background-color : rgba(235, 114, 96, 0.5);
+}
+
+.goal-box {
+    text-align: left;
+
+    margin: 0px auto;
+    border: 2px solid rgba(235, 114, 96, 0.13);
+    padding: 7px;
+    display: inline-block;
+    min-width: 300px;
+    border-radius: 13px;
+    background: rgba(235, 199, 96, 0.27)  ;
+}
+
+.goal-box label {
+    width: 90px;
+    text-align: right;
+    margin-right: 5px;
+}
+
+.goal-box p {
+    margin: 0 0 5px !important;
+}
+
+
 label {
     margin: 6px 0 2px;
 }
