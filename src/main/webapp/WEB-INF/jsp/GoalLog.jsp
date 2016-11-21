@@ -43,8 +43,8 @@
                                     <td>${goal[4]}</td>
                                     <td>${goal[5]}</td>
                                     <td>${goal[1]}</td>
-                                    <td>${goal[3]}</td>
                                     <td>${goal[2]}</td>
+                                    <td>${goal[3]}</td>
                                     <td>${goal[8]}</td>
                                </tr>
                             </c:forEach>
