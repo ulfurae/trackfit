@@ -31,9 +31,9 @@
                         <span>${goal[5]}</span></p>
 
                     <p><label>Reps:</label>
-                        <span>${goal[2]}</span></p>
-                    <p><label>Kilograms: </label>
                         <span>${goal[3]}</span></p>
+                    <p><label>Kilograms: </label>
+                        <span>${goal[2]}</span></p>
                     <p><label>Status:</label>
                         <span>${goal[8]}</span></p>
                 </div>
