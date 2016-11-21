@@ -39,6 +39,11 @@ public class FormulaService {
         return bmi;
     }
     
+    /**
+     * Takes in Date birthday and changes the format to dd/MM/yyyy
+     * @param birthday
+     * @return String containing birthday in new format
+     */
     public String changeDateFormat(Date birthday) {
     	String NEW_FORMAT = "dd/MM/yyyy";
     	String newBirthday;
