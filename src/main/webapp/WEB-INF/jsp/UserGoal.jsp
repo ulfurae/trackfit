@@ -21,10 +21,11 @@
 
                 <h2 class="title">Goal ${goal[0]}</h2>
 
-
                 <div class="goal-box">
                     <p><label>Exercise:</label>
                         <span>${goal[1]}</span></p>
+                    <p><label>Type:</label>
+                        <span>${goal[7]}</span></p>
                     <p><label>Start:</label>
                         <span>${goal[4]}</span></p>
                     <p><label>End</label>
@@ -37,12 +38,36 @@
                     <p><label>Status:</label>
                         <span>${goal[8]}</span></p>
                 </div>
+                <br><br>
+                <sf:form method="POST" commandName="exerciseForm" action="/addExerciseGoal" id="saveForm">
 
+                    <div class="form-exercise col-md-4">
+                        <div class="form-group">
 
+                            <label style="color:grey">Add exercise to goal</label>
+                            <br>
+                            <label>Units:</label>
+                            <div>
+                                <sf:input path="unit1" type="number" placeholder="kg" min="0" max="1000" class="form-control" required="true" style="width:33%;  float: left;  margin-right: 5px;  }"/>
+                                <span  style="float: left; margin: 0px 5px 0px 1px;">x</span>
+                                <sf:input path="unit2" type="number" placeholder="reps" min="0" max="1000" class="form-control" required="true" style="width:33%; float: left; "/>
+                           </div>
+
+                        </div>
+                        <br><br>
+                        <div class="form-group">
+                            <input type="submit" VALUE="Save Exercise" class="btn btn-primary btn-lg btn-block"/>
+                        </div>
+                    </div>
+                </sf:form>
 
             </div>
         </main>
 
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script>
+             $("#saveForm" ).find("input[type='number']").val("");
+        </script>
 
     </body>
 </html>

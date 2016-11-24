@@ -17,9 +17,9 @@ public interface UserExerciseRepository extends JpaRepository<UserExercise, Long
     List<UserExercise> findByUserID(Long userID);
 
     // [0] userExerciseID , [1] name , [2] unit1 , [3] unit2 ,
-    // [4] date , [5] exerciseID , [6] type
+    // [4] date , [5] exerciseID , [6] type , [7] goalID
     @Query(value =  "SELECT ue.id, e.name, ue.unit1, ue.unit2, "     +
-                    "to_char(ue.date, 'dd Mon YYYY'), e.id, e.type " +
+                    "to_char(ue.date, 'dd Mon YYYY'), e.id, e.type, ue.userGoalID " +
                     "FROM Exercise e, UserExercise ue, User u "      +
                     "WHERE e.id = ue.exerciseID AND ue.userID = u.id AND u.id = ?" )
     List<Object[]> findAllUserExercises(Long id);

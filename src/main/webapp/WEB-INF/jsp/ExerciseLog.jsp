@@ -33,16 +33,19 @@
                         			<td><b>Type</b></td>
                         			<td><b>Kilograms</b></td>
                         			<td><b>Reps</b</td>
-
+                        			<td><b>Goal</b</td>
                         	</thead>
 							<tbody>
                             <c:forEach var="exercise" items="${exercises}">
                                 <tr>
-                                    <td style="width:100px">${exercise[4]}</td>
-                                    <td>${exercise[1]}</td>
+                                    <td style="width:100px;">${exercise[4]}</td>
+                                    <td >${exercise[1]}</td>
                                     <td>${exercise[6]}</td>
                                     <td>${exercise[2]}</td>
                                     <td>${exercise[3]}</td>
+                                    <td style="color:brown">
+                                        <c:if test="${exercise[7] != 0}">${exercise[7]}</c:if>
+                                    </td>
                                 </tr>
                             </c:forEach>
                             </tbody>
