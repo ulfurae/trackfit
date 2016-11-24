@@ -23,7 +23,8 @@ public interface GoalRepository extends JpaRepository<UserGoal, Long> {
             "to_char(ue.startDate, 'dd Mon YYYY'), to_char(ue.endDate, 'dd Mon YYYY')," +
             "e.id, e.type, ue.status " +
             "FROM Exercise e, UserGoal ue, User u "   +
-            "WHERE e.id = ue.exerciseID AND ue.userID = u.id AND u.id = ?" )
+            "WHERE e.id = ue.exerciseID AND ue.userID = u.id AND u.id = ?"  +
+            "order by ue.startDate desc" )
     List<Object[]> findAllUserGoals(Long userID);
 
     // [0] userGoalID , [1] name , [2] unit1 , [3] unit2 ,
